@@ -42,10 +42,13 @@ console.group("PRACTICE: Variables and Basic Types");
 //currently held in the variable `x`, and write the value
 //of `y` to the console log
 
+/*var y = x;*/
+/*console.log("the value of y is:", y);*/
 
 //now assign `y` the numeric value 10
 //what does x contain now? Write it to the console
-
+ var y = 10;
+ console.log("x is now:", x);
 
 console.groupEnd();
 
@@ -78,12 +81,16 @@ console.group("PRACTICE: Strings");
 //with some text, and then create another string `s4`
 //and assign it the concatenation of `s2` and `s3`
 //then write it to the console so you can verify it worked.
-
+var s2 = "Hello";
+var s3 = "World";
+var s4 = s2 + " " + s3;
+console.log(s4);
 
 //use the `.trim()` method to remove the leading and
 //trailing white space from this string
 var withSpaces = "    trim those spaces!     ";
-
+var trimmedString = withSpaces.trim();
+console.log(trimmedString);
 
 console.groupEnd();
 
@@ -138,7 +145,7 @@ course.teacher = {
 console.log("after adding property:", course);
 
 //you can remove properties using delete
-delete course.teacher;
+//delete course.teacher;
 console.log("after deleting property:", course);
 
 //you can test whether an object has a property using the
@@ -158,8 +165,20 @@ console.group("PRACTICE: Objects");
 //now try adding a property named `web site` (with a space)
 //setting it to some string value...it's tricky...
 
+var course2 = {
+    curriculum: "INFO",
+    number: 360,
+    name: "Design Thinking",
+    section: "B",
+    quarter: 1,
+    year: 2016,
+    awesome: true
+};
 
+console.log(course2);
 
+course2["web site"] = "http://....";
+console.log(course2);
 
 console.groupEnd();
 
@@ -198,12 +217,15 @@ console.group("PRACTICE: Arrays");
 //--PRACTICE--
 //create another array of playing card suits
 //(clubs, diamonds, hearts, spades)
-
+var suits= ["Clubs", "Diamonds", "Hearts", "Spades"];
 
 //then add a new element named "jokers"
 //afer adding it, access it in the array
 //and log it to the console
-
+suits.push("Jokers");
+var jokerIndex = suits.length-1;
+console.log("The joker is at index: " + jokerIndex);
+console.log(suits);
 
 
 console.groupEnd();
@@ -287,6 +309,7 @@ console.groupCollapsed("Functions");
 function reverseString(s) {
     var reversed = "";
     var idx;
+    s = String(s); //will convert any object/data type into a string. only tend to do this on higher level functions
     for (idx = s.length-1; idx >= 0; idx--) {
         //short form of reversed = reversed + s.charAt(idx)
         reversed += s.charAt(idx);
@@ -342,7 +365,20 @@ console.group("PRACTICE: Functions");
 //and returns the minimum of the two, or the first argument
 //if they are equal to each other. Then call it a few times
 //with various numbers to test it.
+function min(n1, n2) {
+    if (n1 < n2){
+        return n1;
+    }
+    else{
+        return n2;
+    }
+}
+//short hand code :return n2 < n1 ? n2: n1;"
 
+//Test practice
+console.log(min(2,3));
+console.log(min(6,1));
+console.log(min(3,3));
 
 console.groupEnd();
 
@@ -417,6 +453,9 @@ function generateRandomNumbers(howMany, minimum, maximum) {
 }
 
 //>>> your code goes here!
+var randNum = generateRandomNumbers(10, 1, 100);
+var arr = arr.forEach(randNum);
+
 
 
 //now use the .sort() method on a generated array of random
