@@ -13,7 +13,24 @@ signUpForm.addEventListener("submit", function(evt) {
     //after the account is created, then use
     //the .updateProfile() method to set the display name
 
+    //promise represents an a-synchronise operation 
+    //the next code will fire right away
+    //it wont block, so we have to find a way for knowing when it finishes
+    //executes on thing at a time
+    firebase.auth().createUserWithEmailAndPassword(emailInput.value, passwordInput.value)   
+        .then(function(user){
+            return user.updateProfile({
+                displayName: displayNameInput.value
+            });
+        })
+        .then(function(){
+            window.location = "secure.html";
+        })
+        .catch(function(err){
+            alert(err.message);
+        });
 
+//validiation code right before  they're about to sign up'
 
     return false;
 });
