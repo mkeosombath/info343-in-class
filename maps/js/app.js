@@ -23,7 +23,11 @@ var osmTiles = {
 //for a list of map styles supported by Mapbox, as well
 //as full documentation about their map tiles API
 var mapboxTiles = {
+<<<<<<< HEAD
     accessToken: "pk.eyJ1IjoibWtlb3NvbSIsImEiOiJjaXZtcDRwN3AwN3o3MnpwZGc1cjRnbThnIn0.96_wBh4MUv-A3V4gwHdXzA",
+=======
+    accessToken: "...paste your access token here...",
+>>>>>>> 9fd55c19aa556e5926e25f2e5d23b18a0e9c801e
     url: "https://api.tiles.mapbox.com/v4/{style}/{z}/{x}/{y}.png?access_token={accessToken}",
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     styles: {
@@ -49,6 +53,7 @@ var seattleCoords = [47.61, -122.33];
 //other map styles may have different zoom ranges
 var defaultZoom = 13;
 
+<<<<<<< HEAD
 var map = L.map(mapDiv).setView(seattleCoords, defaultZoom);
 L.tileLayer(mapboxTiles.url, {
     attribution: mapboxTiles.attribution,
@@ -104,3 +109,5 @@ fetch(seattle911API)
     });
 
 
+=======
+>>>>>>> 9fd55c19aa556e5926e25f2e5d23b18a0e9c801e
